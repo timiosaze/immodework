@@ -37,7 +37,7 @@ ua = UserAgent()
 chrome_ua = ua.google
 
 # MYSQL CONNECTION PARAMS
-cnx = mysql.connector.connect(host='localhost', user='root', password='password',database='immoscoutdedb')
+cnx = mysql.connector.connect(host='localhost', user='python', password='password',database='immoscoutdedb')
 cursor = cnx.cursor(buffered=True)
 start = time.time()
 
