@@ -286,8 +286,8 @@ def saveData(file):
                     time.sleep(3)
                     print("Will try again for page ")
             title = soup.find('title').text
-            address = soup.find('span', attrs={'class':'zip-region-and-country'}).text
-            print(address)
+            address_full = soup.find('span', attrs={'class':'zip-region-and-country'}).text
+            print(address_full)
             patternKeyValues = re.compile(r'var keyValues = .*};$', re.MULTILINE)
             patternAddress = re.compile(r'.+locationAddress: {(\n.*)+\"\n.+}\n.+$', re.MULTILINE)
             patternContactdata = re.compile(r' .+contactData: {.*},$', re.MULTILINE)
@@ -321,7 +321,7 @@ def saveData(file):
                 json.dump(json.loads(contact_l), f)
             print("successful search")
 
-            loadData(new_id, title, cursor_count, address)
+            loadData(new_id, title, cursor_count, address_full)
         else:
             print("Already in Database")
 
