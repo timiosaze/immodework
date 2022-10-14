@@ -37,7 +37,7 @@ ua = UserAgent()
 chrome_ua = ua.google
 
 # MYSQL CONNECTION PARAMS
-cnx = mysql.connector.connect(host='localhost', user='python', password='password',database='immoscoutdedb')
+cnx = mysql.connector.connect(host='localhost', user='root', password='password',database='immoscoutdedb')
 cursor = cnx.cursor(buffered=True)
 start = time.time()
 
@@ -272,7 +272,7 @@ def saveData(file):
         if(newcount == 0):
             time.sleep(1)
             API_URL = "https://api.zyte.com/v1/extract"
-            API_KEY = "b7587d7cc51742378c7c22a740aaafb3"
+            API_KEY = "0998c63df0e747eab8392a83c2f30ce9"
             while True:
                 try:
                     response = requests.post(API_URL, auth=(API_KEY, ''), json={
@@ -361,7 +361,7 @@ start = time.time()
 # saveData("/home/compscript/Bern.txt")
 # saveData("/home/compscript/Zug.txt")
 # loadData("propertylink", "title", 0)
-saveData('/home/immodework/Germany/Bayern.txt')
+saveData('/home/immodework/Germany/Sachsen.txt')
 # append()
 cursor.close()
 end = time.time()
